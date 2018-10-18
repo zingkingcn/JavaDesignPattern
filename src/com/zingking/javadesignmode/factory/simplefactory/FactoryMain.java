@@ -16,7 +16,8 @@ import com.zingking.javadesignmode.factory.simplefactory.product.IFruit;
  * <p>适用场景：
  * <p>1.构建一个对象实例需要初始化很多参数，例如数据库的链接，可以通过工厂模式减少代码重复</p>
  * <p>2.有很多子类，这些子类的对象实例在创建过程中容易发生改变，或者对子类的调用容易改变？？？
- * <p>https://blog.csdn.net/kocscs123/article/details/53243847</p></p></p>
+ * https://blog.csdn.net/kocscs123/article/details/53243847</p>
+ * <p>3.读取共享资源的时候，例如读取配置文件</p>
  * <p>缺点：增加新的产品需要修改工厂类，工厂类必须知道所有可生产出的产品，不符合开-闭原则</p>
  */
 class FactoryMain {

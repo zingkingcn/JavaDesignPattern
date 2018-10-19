@@ -9,11 +9,14 @@ package com.zingking.javadesignmode.singleton;
 class SingletonMain {
     // TODO: 2018/10/15 优缺点及适用场景 https://www.cnblogs.com/damsoft/p/6105122.html by Z.kai
     public static void main(String[] args) {
-        SingletonMain main = new SingletonMain();
-        main.testEagerSingleton();
-        main.testOptimizeEagerSingleton();
-        main.testLazySingleton();
-        main.testRegisterSingleton();
+//        SingletonMain main = new SingletonMain();
+//        main.testEagerSingleton();
+//        main.testOptimizeEagerSingleton();
+//        main.testLazySingleton();
+//        main.testRegisterSingleton();
+
+        EagerSingleton.testOptimize();
+        OptimizeEagerSingleton.testOptimize();
     }
 
     public void testEagerSingleton() {

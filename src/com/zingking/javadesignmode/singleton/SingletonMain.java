@@ -17,6 +17,16 @@ class SingletonMain {
 
         EagerSingleton.testOptimize();
         OptimizeEagerSingleton.testOptimize();
+
+        // 双重检查的单例模式 -START-
+//        for (int i = 0; i < 5; i++) {
+//            new Thread(() -> {
+//                DoubleCheckLazySingleton instance = DoubleCheckLazySingleton.getInstance();
+//                System.out.println("instance = " + instance);
+//                instance.printSomething();
+//            }).start();
+//        }
+        // 双重检查的单例模式 -END-
     }
 
     public void testEagerSingleton() {

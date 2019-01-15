@@ -1,7 +1,7 @@
-package com.zingking.javadesignmode.builder;
+package com.zingking.javadesignmode.builder.standard;
 
-import com.zingking.javadesignmode.builder.builders.IBuilder;
-import com.zingking.javadesignmode.builder.product.BaseCar;
+import com.zingking.javadesignmode.builder.standard.builders.IBuilder;
+import com.zingking.javadesignmode.builder.standard.product.BaseCar;
 
 /**
  * Copyright (c) 2018, Z.kai All rights reserved.
@@ -9,7 +9,7 @@ import com.zingking.javadesignmode.builder.product.BaseCar;
  * date：2018/12/29
  * description：导演类，负责指挥建造生产产品
  */
-class Director {
+public class Director {
 
     private IBuilder iBuilder;
 

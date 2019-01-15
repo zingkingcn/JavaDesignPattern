@@ -1,4 +1,4 @@
-package com.zingking.javadesignmode.builder.product;
+package com.zingking.javadesignmode.builder.standard.product;
 
 /**
  * Copyright (c) 2018, Z.kai All rights reserved.

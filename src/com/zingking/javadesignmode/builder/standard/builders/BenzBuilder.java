@@ -1,7 +1,7 @@
-package com.zingking.javadesignmode.builder.builders;
+package com.zingking.javadesignmode.builder.standard.builders;
 
-import com.zingking.javadesignmode.builder.product.BaseCar;
-import com.zingking.javadesignmode.builder.product.CadillacCar;
+import com.zingking.javadesignmode.builder.standard.product.BaseCar;
+import com.zingking.javadesignmode.builder.standard.product.BenzCar;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * date：2018/12/29
  * description：
  */
-public class CadillacBuilder implements IBuilder {
+public class BenzBuilder implements IBuilder {
     ArrayList<String> carParts = new ArrayList<>();
 
     @Override
@@ -36,10 +36,10 @@ public class CadillacBuilder implements IBuilder {
 
     @Override
     public BaseCar retrieveResult() {
-        CadillacCar cadillacCar = new CadillacCar();
-        cadillacCar.setCarPart((ArrayList<String>) carParts.clone());
+        BenzCar benzCar = new BenzCar();
+        benzCar.setCarPart((ArrayList<String>) carParts.clone());
         this.carParts.clear();
-        return cadillacCar;
+        return benzCar;
     }
 
 

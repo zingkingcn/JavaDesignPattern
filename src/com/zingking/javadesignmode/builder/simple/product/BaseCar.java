@@ -1,4 +1,4 @@
-package com.zingking.javadesignmode.builder.product;
+package com.zingking.javadesignmode.builder.simple.product;
 
 import java.util.ArrayList;
 

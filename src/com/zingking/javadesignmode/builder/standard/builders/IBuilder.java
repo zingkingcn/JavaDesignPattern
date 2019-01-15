@@ -1,6 +1,6 @@
-package com.zingking.javadesignmode.builder.builders;
+package com.zingking.javadesignmode.builder.standard.builders;
 
-import com.zingking.javadesignmode.builder.product.BaseCar;
+import com.zingking.javadesignmode.builder.standard.product.BaseCar;
 
 /**
  * Copyright (c) 2018, Z.kai All rights reserved.

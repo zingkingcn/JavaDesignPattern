@@ -1,5 +1,7 @@
 package com.zingking.javadesignmode.strategy;
 
+import com.zingking.javadesignmode.strategy.enumstrategy.EnumCalculator;
+
 /**
  * Copyright (c) 2019, Z.kai All rights reserved.
  * author：Z.kai
@@ -19,6 +21,9 @@ class StrategyMain {
         context = new Context(subtractionCalculator);
         int exec1 = context.exec(1, 1);
         System.out.println(TAG + " - StrategyMain.main -> exec1 = " + exec1);
+
+        int exec2 = EnumCalculator.ADD.exec(5, 5);
+        System.out.println(TAG + " - StrategyMain.main -> exec2 = " + exec2);
 
     }
 }

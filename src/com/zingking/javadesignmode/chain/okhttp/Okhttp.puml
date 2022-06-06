@@ -1,0 +1,68 @@
+@startuml
+
+class Request {
+    - final StringBuffer params;
+    + getParams():String
+    + addParams(String param):void
+}
+
+class Response {
+    - final StringBuffer result;
+    + getResult():String
+    + addResult(String result) :void
+}
+
+interface IInterceptor{
+    +intercept(Chain chain):Response
+}
+
+interface Chain{
+    +request():Request
+    +proceed(Request request):Response
+}
+
+class RealInterceptorChain{
+    - final List<IInterceptor> interceptors
+    - final int index
+    - final Request request
+    RealInterceptorChain(List<IInterceptor> interceptors, int index, Request request):RealInterceptorChain
+    +request():Request
+    +proceed(Request request):Response
+}
+note right of RealInterceptorChain
+关键流转类
+proceed方法中，找到当前处理者的后继者，
+将包含所有拦截器的后继者链 作为参数交给当前拦截器处理（Interceptor的intercept方法）时
+
+end note
+class OkHttpClient{
+    - List<IInterceptor> interceptorList
+}
+
+class RealCall {
+    ~ final OkHttpClient client
+    ~ final Request originalRequest
+
+    + execute():Response
+    + getResponseWithInterceptorChain():Response
+}
+
+note right of RealCall
+责任链开始的地方
+会创建第一个 Chain 并处理
+IInterceptor.Chain chain = new RealInterceptorChain(interceptors, 0, originalRequest);
+return chain.proceed(originalRequest);
+end note
+
+IInterceptor +-- Chain : inner class
+Response <..IInterceptor
+Response <..Chain
+Request <.right.Chain
+Chain <|.. RealInterceptorChain
+IInterceptor <-- RealInterceptorChain
+IInterceptor <-- OkHttpClient
+OkHttpClient <-- RealCall
+Request <-- RealCall
+Response <.. RealCall
+RealInterceptorChain <.. RealCall
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Handler {
+    -next:Handler
+    +setNext(Handler next):void
+    +getNext():Handler
+    +handleRequest(String request):void
+}
+
+class ConcreteHandler1 {
+    +handleRequest(String request):void
+}
+
+class ConcreteHandler2 {
+    +handleRequest(String request):void
+}
+
+class Client{
+
+}
+note right of Client
+Handler handler1 = new ConcreteHandler1();
+Handler handler2 = new ConcreteHandler2();
+handler1.setNext(handler2);
+handler1.handleRequest("deal");
+end note
+
+Handler o-- Handler
+
+Handler <|-- ConcreteHandler1
+Handler <|-- ConcreteHandler2
+Handler <.right.  Client
+
+
+@enduml
